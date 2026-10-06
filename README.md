@@ -1,15 +1,23 @@
 # meta 하네스
 
-사람은 짧은 문서만 보고, 상세한 일은 AI가 하는 Claude Code 개발 하네스.
+Spec으로 성공 기준을 선언하면, AI가 테스트를 먼저 작성해 고정하고 모든 테스트를 통과할 때까지 구현한다.
+Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
+
+## 철학: "하지 마" 대신 "해"를 남긴다
+
+"나가 살아. 서울대에 합격하면 돌아와."
+이렇게 말하면 학원을 가든 독학을 하든, 스스로 방법을 찾아 될 때까지 해낸다.
+"학원 가, 잠은 4시간만 자"를 더하면 방법이 묶여 자유도가 떨어진다.
+
+그래서 문서는 이렇게 쓴다.
+1. 성공한 모습만 선언한다. 방법은 AI에게 맡긴다
+2. "하지 마"는 "이렇게 한다"로 바꾼다
+3. 꼭 막아야 하는 것은 문장이 아니라 테스트로 확인한다
+4. 되돌릴 수 없는 일은 장치로 처음부터 막는다
+   - 문장은 긍정형이든 부정형이든 AI에게 하는 부탁일 뿐이다. 지켜지는 것은 장치만 보장한다
 
 ## 1. 설치
 
-준비물
-- Claude Code
-- git
-- Codex CLI (선택. 자동 모드에서 함께 결정할 때 씀)
-
-설치
 1. 하네스를 내려받는다.
    ```
    git clone {저장소 주소}
@@ -17,10 +25,6 @@
 2. meta-harness/.claude 폴더를 내 프로젝트에 복사한다.
    이미 .claude가 있으면 합친다. 내 파일은 그대로 남는다.
 3. Claude Code에서 /meta-flow를 실행한다.
-
-업데이트
-1. meta-harness 폴더에서 git pull
-2. .claude 폴더를 다시 복사해서 덮어쓴다
 
 ## 2. 사용법
 
@@ -69,12 +73,34 @@
 | meta-loop | 처음부터 끝까지 자동 진행 |
 | meta-live | 배포 전 실제 연동 테스트 |
 
-## 문서
+## 4. 문서
 
 사람이 보는 문서
-- roadmap.md, contract.md, design-system.md, note.md
-- specs/번호/spec.md, tech.md
-- wiki/ (직접 고치지 않는다. 스킬이 갱신한다)
+짧게 쓴다. 사람은 이것만 읽고 판단한다.
+
+프로젝트 전체
+- roadmap.md: 무엇을 어떤 순서로 만드나
+- contract.md: 프로젝트 원칙, 제약, 공통 기술, 품질 기준
+- design-system.md: 색, 글꼴, 간격, 버튼과 입력창 모양
+- note.md: 자유 메모. AI가 발견한 문제도 여기에 모인다
+
+기능마다 (specs/002-signup/)
+- spec.md: 무엇을 만드나. 사용자 스토리, 요구사항, 성공 기준
+- tech.md: 무엇으로 만드나. 고른 기술과 이유
+- screens/screen.html: 고른 화면 시안
+
+구현 결과 (wiki/)
+- 실제로 만들어진 내용을 meta-wiki가 정리한다
+- architecture.md, erd.md, glossary.md, screen.md, spec-index.md
+- spec-index.md에서 기능마다 진행 상태를 본다
 
 AI가 보는 문서
-- specs/번호/ai/
+상세하게 쓴다. 사람은 스킬이 보여주는 요약만 본다.
+- specs/002-signup/ai/research.md: 기술 후보 조사, 최신 사용법
+- specs/002-signup/ai/plan.md: 상세 구현 계획
+- specs/002-signup/ai/tasks.md: 작업 순서와 병렬 묶음
+
+문서를 고칠 때
+- 문서를 먼저 고치고, 코드가 문서를 따른다
+- 동작이 바뀌면 spec.md (사용자 허락), 기술이 바뀌면 tech.md, 설계가 바뀌면 ai/plan.md
+- 완료된 기능의 문서를 고쳤으면 /meta-wiki를 다시 실행한다
