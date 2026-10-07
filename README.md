@@ -20,9 +20,9 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 
 1. 하네스를 내려받는다.
    ```
-   git clone https://github.com/meta-agent-project/meta-sdd-harness.git
+   git clone https://github.com/meta-agent-project/metakit-sdd-harness.git
    ```
-2. meta-sdd-harness/.claude 폴더를 내 프로젝트에 복사한다.
+2. metakit-sdd-harness/.claude 폴더를 내 프로젝트에 복사한다.
    이미 .claude가 있으면 합친다. 내 파일은 그대로 남는다.
 3. Claude Code에서 /meta-flow를 실행한다.
 
