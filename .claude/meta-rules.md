@@ -3,14 +3,32 @@
 meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 
 이 파일은 하네스를 설치하거나 업데이트할 때 덮어쓴다.
-프로젝트마다 다른 규칙은 contract.md에 쓴다.
+프로젝트마다 다른 규칙은 .meta/contract.md에 쓴다.
+
+## 폴더 구조
+
+하네스 문서는 모두 .meta/ 안에 있다. 프로젝트 코드와 섞이지 않게 하기 위해서다.
+스킬과 에이전트 파일에서 폴더 없이 파일 이름만 쓴 문서도 아래 위치에 있다.
+
+```
+.meta/
+  roadmap.md
+  contract.md
+  design-system.md
+  note.md
+  specs/번호/       spec.md, tech.md, screens/, ai/
+  wiki/             architecture.md, erd.md, erd.svg, glossary.md, screen.md, spec-index.md
+  loop/             auto-decisions.md, question.md, settings.md, logs/
+```
+
+프로젝트 코드는 .meta/ 밖에 둔다.
 
 ## 사람이 보는 문서
 
 대상
-- roadmap.md, contract.md, design-system.md, note.md
-- specs/번호/spec.md, tech.md
-- wiki/ 안의 파일
+- .meta/ 의 roadmap.md, contract.md, design-system.md, note.md
+- .meta/specs/번호/spec.md, tech.md
+- .meta/wiki/ 안의 파일
 - meta 스킬과 에이전트 파일
 
 쓰는 법
@@ -84,7 +102,7 @@ spec 하나는 spec 브랜치에서 만들고 끝나면 기본 브랜치에 머�
 ## 루프 모드
 
 meta-worker로 실행될 때는 사용자에게 직접 묻지 않는다.
-묻는 지점에서는 .meta-loop/question.md에 질문, 선택지, 추천과 이유를 쓰고 멈춘다.
+묻는 지점에서는 .meta/loop/question.md에 질문, 선택지, 추천과 이유를 쓰고 멈춘다.
 형식은 .claude/agents/meta-worker.md를 따른다.
 
 ## 레인 에이전트
@@ -128,7 +146,7 @@ JavaScript 프로젝트는 npm run test, npm run typecheck, npm run lint로 실�
 ## AI가 보는 문서
 
 대상
-- specs/번호/ai/ 안의 파일
+- .meta/specs/번호/ai/ 안의 파일
 
 쓰는 법
 - 구체적이고 상세하게 쓴다. 길어도 된다.

@@ -9,24 +9,28 @@ description: meta 하네스의 공통 파일과 폴더를 빈 상태로 만들�
 
 ## 만들 것
 
+하네스 문서는 모두 .meta/ 안에 만든다. 프로젝트 코드와 섞이지 않게 하기 위해서다.
+
 프로젝트 루트
+- .gitignore
+- .worktreeinclude
+
+.meta/
 - roadmap.md
 - contract.md
 - design-system.md
 - note.md
-- .gitignore
-- .worktreeinclude
 
-specs/ (빈 폴더)
+.meta/specs/ (빈 폴더)
 
-wiki/
+.meta/wiki/
 - architecture.md
 - erd.md
 - glossary.md
 - screen.md
 - spec-index.md
 
-.meta-loop/
+.meta/loop/
 - auto-decisions.md
 
 ## CLAUDE.md에 넣을 줄
@@ -40,9 +44,9 @@ wiki/
 ## .gitignore에 넣을 줄
 
 ```
-.meta-loop/question.md
-.meta-loop/settings.md
-.meta-loop/logs/
+.meta/loop/question.md
+.meta/loop/settings.md
+.meta/loop/logs/
 .claude/worktrees/
 .env
 ```
@@ -66,7 +70,7 @@ wiki/
 ## 순서
 
 1. 이미 있는 파일은 건드리지 않는다. 없는 것만 만든다.
-2. 문서는 모두 빈 파일로 만든다. wiki/와 .meta-loop/ 안의 파일도 마찬가지다.
+2. 문서는 모두 빈 파일로 만든다. .meta/wiki/와 .meta/loop/ 안의 파일도 마찬가지다.
 3. 이미 있는 파일에는 빠진 것만 더한다.
    - .gitignore, .worktreeinclude: 위의 줄 중 없는 것만 추가한다
    - CLAUDE.md: 없으면 위의 한 줄로 만든다. 있으면 그 줄이 없을 때만 맨 아래에 추가한다
@@ -75,6 +79,6 @@ wiki/
 5. 만든 파일을 커밋한다. 커밋 메시지: "chore: meta 하네스 초기화"
 6. 만든 것과 건너뛴 것을 목록으로 알린다.
 7. 다음 할 일
-   roadmap.md가 비어 있으면 "지금 /meta-interview로 로드맵을 만들까요?"라고 묻는다.
+   .meta/roadmap.md가 비어 있으면 "지금 /meta-interview로 로드맵을 만들까요?"라고 묻는다.
    좋다고 하면 바로 /meta-interview를 시작한다.
    design-system은 /meta-screen에서 채운다고 알린다.

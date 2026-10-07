@@ -10,7 +10,7 @@ description: 새 기능의 spec.md를 만들고 질문 5개 이내로 다듬는�
 ## 순서
 
 1. 번호 정하기
-   specs/에서 가장 큰 번호에 1을 더한다. 이름은 영문 소문자 2~3단어. 예: 002-signup
+   .meta/specs/에서 가장 큰 번호에 1을 더한다. 이름은 영문 소문자 2~3단어. 예: 002-signup
 
 2. 읽기
    contract.md, roadmap.md, 사용자 설명을 읽는다.

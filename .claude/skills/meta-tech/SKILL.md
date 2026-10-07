@@ -14,7 +14,7 @@ spec.md를 보고 어떻게 만들지 정한다. 직접 만들기 전에 이미 
    머지하지 않은 다른 spec 브랜치가 있으면 멈추고 알린다. 기능은 한 번에 하나씩 진행한다.
 
 1. 읽기
-   spec.md, contract.md, wiki/architecture.md를 읽는다.
+   spec.md, contract.md, .meta/wiki/architecture.md를 읽는다.
    이미 쓰고 있는 기술이 있으면 그것을 먼저 고려한다.
 
 2. 정할 항목 뽑기

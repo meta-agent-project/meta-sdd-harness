@@ -24,7 +24,7 @@ description: meta 하네스의 자료조사 에이전트. 기술 후보 조사�
 - 항목마다 무료 API, 오픈소스 후보를 2~3개 찾는다
 - 각 후보의 최신 버전, 마지막 업데이트, 라이선스, 무료 한도를 확인한다
 - 직접 만들 필요가 있는지 판단한다
-저장: specs/번호/ai/research.md의 "후보 조사"
+저장: .meta/specs/번호/ai/research.md의 "후보 조사"
 
 ## 2차: 사용법 수집
 
@@ -48,7 +48,7 @@ description: meta 하네스의 자료조사 에이전트. 기술 후보 조사�
 - 설치 안내나 튜토리얼 전체
 - 우리 코드
 
-저장: specs/번호/ai/research.md의 "사용법"
+저장: .meta/specs/번호/ai/research.md의 "사용법"
 
 ## research.md 구조
 

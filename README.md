@@ -47,7 +47,7 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 /meta-loop
 ```
 휴대폰으로 질문을 받으려면 Remote Control을 연결해 둔다.
-정한 시간 안에 답이 없으면 Claude와 Codex가 함께 정하고 .meta-loop/auto-decisions.md에 남긴다.
+정한 시간 안에 답이 없으면 Claude와 Codex가 함께 정하고 .meta/loop/auto-decisions.md에 남긴다.
 
 배포 전
 ```
@@ -78,27 +78,27 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 사람이 보는 문서
 짧게 쓴다. 사람은 이것만 읽고 판단한다.
 
-프로젝트 전체
+프로젝트 전체 (.meta/)
 - roadmap.md: 무엇을 어떤 순서로 만드나
 - contract.md: 프로젝트 원칙, 제약, 공통 기술, 품질 기준
 - design-system.md: 색, 글꼴, 간격, 버튼과 입력창 모양
 - note.md: 자유 메모. AI가 발견한 문제도 여기에 모인다
 
-기능마다 (specs/002-signup/)
+기능마다 (.meta/specs/002-signup/)
 - spec.md: 무엇을 만드나. 사용자 스토리, 요구사항, 성공 기준
 - tech.md: 무엇으로 만드나. 고른 기술과 이유
 - screens/screen.html: 고른 화면 시안
 
-구현 결과 (wiki/)
+구현 결과 (.meta/wiki/)
 - 실제로 만들어진 내용을 meta-wiki가 정리한다
 - architecture.md, erd.md(+ erd.svg 그림), glossary.md, screen.md, spec-index.md
 - spec-index.md에서 기능마다 진행 상태를 본다
 
 AI가 보는 문서
 상세하게 쓴다. 사람은 스킬이 보여주는 요약만 본다.
-- specs/002-signup/ai/research.md: 기술 후보 조사, 최신 사용법
-- specs/002-signup/ai/plan.md: 상세 구현 계획
-- specs/002-signup/ai/tasks.md: 작업 순서와 병렬 묶음
+- .meta/specs/002-signup/ai/research.md: 기술 후보 조사, 최신 사용법
+- .meta/specs/002-signup/ai/plan.md: 상세 구현 계획
+- .meta/specs/002-signup/ai/tasks.md: 작업 순서와 병렬 묶음
 
 문서를 고칠 때
 - 문서를 먼저 고치고, 코드가 문서를 따른다

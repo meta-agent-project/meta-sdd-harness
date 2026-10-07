@@ -142,7 +142,7 @@ screen.md
 - 목적: 이메일로 계정을 만든다
 - 주요 요소: 이메일, 비밀번호, 가입 버튼
 - 이동: 성공하면 홈
-- 시안: specs/002-signup/screens/screen.html
+- 시안: .meta/specs/002-signup/screens/screen.html
 ```
 
 spec-index.md
@@ -153,7 +153,7 @@ spec-index.md
 ## 001-lecture-store 강의 저장
 - 상태: 완료
 - 목적: 강의를 만들고 안전하게 저장한다
-- 원본: specs/001-lecture-store/spec.md
+- 원본: .meta/specs/001-lecture-store/spec.md
 - 사용자 스토리
   - P1 새 강의를 만들고 다시 연다
   - P1 강의를 고치고 안전하게 저장한다

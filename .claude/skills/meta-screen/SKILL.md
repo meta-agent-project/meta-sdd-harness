@@ -24,7 +24,7 @@ description: spec.md의 화면을 HTML 시안 3개로 보여주고 하나를 고
    - 건너뛸지 애매하면 사용자에게 묻는다.
 
 3. 시안 3개 만들기
-   specs/번호/screens/에 a.html, b.html, c.html을 만든다.
+   .meta/specs/번호/screens/에 a.html, b.html, c.html을 만든다.
    파일 하나에 그 기능의 모든 화면을 담는다.
    외부 파일 없이 브라우저로 바로 열리게 만든다.
 

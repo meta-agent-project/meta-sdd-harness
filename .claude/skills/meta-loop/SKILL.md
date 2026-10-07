@@ -20,7 +20,7 @@ description: roadmap의 모든 기능을 멈추지 않고 끝까지 진행한다
     컴퓨터가 절전 모드로 들어가지 않게 해 주세요."
 
 3. 기다리는 시간 정하기
-   .meta-loop/settings.md에 지난 설정이 있으면 보여주고 그대로 쓸지 묻는다.
+   .meta/loop/settings.md에 지난 설정이 있으면 보여주고 그대로 쓸지 묻는다.
    없으면 묻는다.
    "질문이 생겼을 때 답을 몇 분 기다릴까요? 이 시간이 지나면 Claude와 Codex가 함께 정합니다."
    - 10분
@@ -28,7 +28,7 @@ description: roadmap의 모든 기능을 멈추지 않고 끝까지 진행한다
    - 30분
    - 기다리지 않음 (바로 함께 정함. 완전 자동)
    - 직접 입력
-   정한 시간을 .meta-loop/settings.md에 적는다.
+   정한 시간을 .meta/loop/settings.md에 적는다.
 
 ## 구간
 
@@ -58,7 +58,7 @@ description: roadmap의 모든 기능을 멈추지 않고 끝까지 진행한다
 
 ## 질문 처리
 
-1. .meta-loop/question.md를 읽는다.
+1. .meta/loop/question.md를 읽는다.
 
 2. 화면 시안 질문이면 시안 페이지를 올린다
    세 시안을 탭으로 넘겨 볼 수 있는 페이지 하나를 Artifact 도구로 비공개 게시한다.
@@ -137,7 +137,7 @@ Claude 순위: 1, 2. 국내 카드 지원, 테스트 모드 무료
 Codex 순위: 1, 2. contract의 무료 서비스 원칙에 맞음
 합계: 1번 4점, 2번 2점
 정한 답: 토스페이먼츠
-반영한 문서: specs/003-payment/tech.md
+반영한 문서: .meta/specs/003-payment/tech.md
 ```
 
 ## 실패 처리

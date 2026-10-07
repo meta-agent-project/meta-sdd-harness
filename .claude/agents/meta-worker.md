@@ -17,7 +17,7 @@ description: meta-loop의 일꾼 에이전트. 기능 하나의 단계 하나를
    커밋 안 된 변경이 있으면 이전 일꾼이 끊긴 흔적이다. 지우고 시작한다.
    - git reset --hard
    - git clean -fd
-   .gitignore에 있는 파일(.env, .meta-loop/의 작업 파일)은 지우지 않는다. git clean에 -x를 붙이지 않는다.
+   .gitignore에 있는 파일(.env, .meta/loop/의 작업 파일)은 지우지 않는다. git clean에 -x를 붙이지 않는다.
    그다음 .claude/meta-rules.md의 브랜치 규칙대로 맞는 브랜치에 있는지 확인한다.
    - meta-spec: 기본 브랜치
    - meta-tech: 스킬이 spec 브랜치를 만든다
@@ -28,7 +28,7 @@ description: meta-loop의 일꾼 에이전트. 기능 하나의 단계 하나를
    루프 모드다. 사용자에게 직접 묻지 않는다.
 
 3. 질문이 생기면
-   .meta-loop/question.md에 쓰고 멈춘다. 그때까지 한 작업은 커밋하지 않는다.
+   .meta/loop/question.md에 쓰고 멈춘다. 그때까지 한 작업은 커밋하지 않는다.
 
 4. 끝
    스킬이 정한 대로 커밋한다.
