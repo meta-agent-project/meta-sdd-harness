@@ -1,6 +1,6 @@
 ---
 name: meta-design-consistency
-description: 화면 시안을 design-tokens.yaml, design-system.md, 기존 mockup.html과 비교해 값, 컴포넌트, 페이지 골격, 패턴을 맞춘다. meta-mockup이 시안마다 안에서 쓰고, 직접 실행하면 모든 기능의 시안을 한 번에 맞춘다. "디자인 일관성", "화면 통일", "토큰 정리", "meta-design-consistency" 요청에 사용.
+description: 화면 시안을 tokens.yaml, components.yaml, design-system.md, 기존 mockup.html과 비교해 값, 컴포넌트, 페이지 골격, 패턴을 맞춘다. meta-mockup이 시안마다 안에서 쓰고, 직접 실행하면 모든 기능의 시안을 한 번에 맞춘다. "디자인 일관성", "화면 통일", "토큰 정리", "meta-design-consistency" 요청에 사용.
 ---
 
 # meta-design-consistency
@@ -11,14 +11,16 @@ description: 화면 시안을 design-tokens.yaml, design-system.md, 기존 mocku
 - 시안 검사: meta-mockup이 시안을 만들 때마다 안에서 실행한다
 - 전체 검사: 사용자가 /meta-design-consistency를 직접 실행한다
 
-## 두 문서
+## 세 문서
 
-design-tokens.yaml이 값의 원본이다.
-design-system.md가 규칙과 패턴의 원본이다. 값을 쓰지 않고 토큰 이름만 쓴다.
+.meta/design/ 안에 있다.
 
-design-tokens.yaml
-- 기본 값(color, font, space, radius, layout)과 컴포넌트 값(component)으로 나눈다
-- 컴포넌트는 숫자를 직접 쓰거나 color.primary처럼 기본 값을 가리킨다
+tokens.yaml이 기본 값의 원본이다.
+components.yaml이 컴포넌트 값의 원본이다.
+design-system.md가 규칙과 패턴의 원본이다. 값을 쓰지 않고 토큰과 컴포넌트 이름만 쓴다.
+
+tokens.yaml
+- 기본 값(color, font, space, radius, layout)만 쓴다
 - 단위는 px이고 쓰지 않는다
 - 테스트가 이 파일을 직접 읽는다
 
@@ -38,16 +40,26 @@ layout:
   header-height: 64
   content-max-width: 1200
   page-padding: 24
-component:
-  button-primary:
-    background: color.primary
-    text: color.background
-    height: 44
-    radius: radius.control
-  input:
-    height: 44
-    border: color.text-sub
-    error-border: color.error
+```
+
+components.yaml
+- 맨 위 키가 컴포넌트 이름이다
+- 값은 숫자를 직접 쓰거나 color.primary처럼 tokens.yaml의 이름을 가리킨다
+- 상태(hover, disabled, error)는 컴포넌트 아래 키로 쓰고, 기본 상태와 다른 값만 적는다
+- 테스트가 이 파일을 직접 읽는다
+
+```yaml
+button-primary:
+  background: color.primary
+  text: color.background
+  height: 44
+  radius: radius.control
+  disabled: { background: color.text-sub }
+input:
+  height: 44
+  border: color.text-sub
+  radius: radius.control
+  error: { border: color.error }
 ```
 
 design-system.md
@@ -75,8 +87,8 @@ design-system.md
 
 ## 비교하는 것
 
-1. 값: 색, 글자 크기, 간격, 모서리가 design-tokens.yaml에 있는 값이다
-2. 컴포넌트: 버튼, 입력창, 표, 카드가 component와 같은 모양이다. 같은 역할인데 모양이 다르면 기존 컴포넌트로 바꾼다
+1. 값: 색, 글자 크기, 간격, 모서리가 tokens.yaml에 있는 값이다
+2. 컴포넌트: 버튼, 입력창, 표, 카드가 components.yaml과 같은 모양이다. 상태별 모양도 같다. 같은 역할인데 모양이 다르면 기존 컴포넌트로 바꾼다
 3. 골격: 헤더, 페이지 제목, 주 버튼 위치, 본문 너비가 design-system.md의 페이지 골격과 같다
 4. 패턴: 이미 있는 패턴과 같은 종류의 화면이면, 그 패턴이 쓰인 mockup.html과 배치가 같다
 
@@ -100,7 +112,8 @@ meta-mockup 4번에서 실행한다. 토큰이 비어 있으면(첫 기능) 건�
 meta-mockup 7번에서 실행한다.
 
 토큰이 비어 있었을 때 (첫 기능)
-- mockup.html에서 색, 글꼴, 간격, 모서리, 레이아웃 값, 컴포넌트를 뽑아 design-tokens.yaml을 쓴다
+- mockup.html에서 색, 글꼴, 간격, 모서리, 레이아웃 값을 뽑아 tokens.yaml을 쓴다
+- 버튼, 입력창 같은 컴포넌트와 상태별 값을 뽑아 components.yaml을 쓴다
 - 페이지 골격, 패턴, 컴포넌트 사용을 뽑아 design-system.md를 쓴다
 
 토큰이 있었을 때
@@ -125,10 +138,10 @@ meta-mockup 7번에서 실행한다.
    여러 화면에서 다르게 쓰인 값은 무엇으로 합칠지 묻는다.
 
 4. 고치기
-   mockup.html, design-tokens.yaml, design-system.md를 고친다.
+   mockup.html, tokens.yaml, components.yaml, design-system.md를 고친다.
 
 5. 구현 코드 확인
-   구현된 화면 코드에서 design-tokens.yaml과 다른 값을 찾는다.
+   구현된 화면 코드에서 tokens.yaml, components.yaml과 다른 값을 찾는다.
    코드는 고치지 않는다. note.md의 "AI가 발견한 문제"에 적는다.
 
 6. 마무리

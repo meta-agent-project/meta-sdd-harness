@@ -11,7 +11,7 @@ AI가 구현할 수 있는 상세 계획을 ai/plan.md에 쓴다.
 ## 순서
 
 1. 읽기
-   spec.md, tech.md, ai/research.md, design-tokens.yaml, design-system.md, contract.md를 읽는다.
+   spec.md, tech.md, ai/research.md, tokens.yaml, components.yaml, design-system.md, contract.md를 읽는다.
    mockups/mockup.html이 있으면 읽는다. mockup 단계를 건너뛴 기능에는 없다.
 
 2. 기존 구조 확인

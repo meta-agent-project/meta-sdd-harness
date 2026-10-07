@@ -89,9 +89,12 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 프로젝트 전체 (.meta/)
 - roadmap.md: 무엇을 어떤 순서로 만드나
 - contract.md: 프로젝트 원칙, 제약, 공통 기술, 품질 기준
-- design-tokens.yaml: 색, 글꼴, 간격, 버튼과 입력창 값. 값의 원본
-- design-system.md: 페이지 골격, 화면 패턴, 컴포넌트 쓰는 규칙. 값 대신 토큰 이름을 쓴다
 - note.md: 자유 메모. AI가 발견한 문제도 여기에 모인다
+
+디자인 (.meta/design/)
+- tokens.yaml: 색, 글꼴, 간격, 모서리, 레이아웃 값. 값의 원본
+- components.yaml: 버튼, 입력창 같은 컴포넌트 값과 상태별 값. 토큰 이름을 가리킨다
+- design-system.md: 페이지 골격, 화면 패턴, 컴포넌트 쓰는 규칙. 값 대신 이름을 쓴다
 
 기능마다 (.meta/specs/002-signup/)
 - spec.md: 무엇을 만드나. 사용자 스토리, 요구사항, 성공 기준

@@ -18,9 +18,12 @@ description: meta 하네스의 공통 파일과 폴더를 빈 상태로 만들�
 .meta/
 - roadmap.md
 - contract.md
-- design-tokens.yaml
-- design-system.md
 - note.md
+
+.meta/design/
+- tokens.yaml
+- components.yaml
+- design-system.md
 
 .meta/specs/ (빈 폴더)
 
@@ -70,16 +73,22 @@ description: meta 하네스의 공통 파일과 폴더를 빈 상태로 만들�
 
 ## 순서
 
-1. 이미 있는 파일은 건드리지 않는다. 없는 것만 만든다.
-2. 문서는 모두 빈 파일로 만든다. .meta/wiki/와 .meta/loop/ 안의 파일도 마찬가지다.
-3. 이미 있는 파일에는 빠진 것만 더한다.
+1. 옛 디자인 문서 옮기기
+   .meta/design-tokens.yaml이 있으면 옮긴다.
+   - component: 아래 내용은 한 단계 내어 .meta/design/components.yaml에 쓴다
+   - 나머지는 .meta/design/tokens.yaml에 쓴다
+   - .meta/design-tokens.yaml은 지운다
+   - .meta/design-system.md는 git mv로 .meta/design/design-system.md로 옮긴다
+2. 이미 있는 파일은 건드리지 않는다. 없는 것만 만든다.
+3. 문서는 모두 빈 파일로 만든다. .meta/design/, .meta/wiki/, .meta/loop/ 안의 파일도 마찬가지다.
+4. 이미 있는 파일에는 빠진 것만 더한다.
    - .gitignore, .worktreeinclude: 위의 줄 중 없는 것만 추가한다
    - CLAUDE.md: 없으면 위의 한 줄로 만든다. 있으면 그 줄이 없을 때만 맨 아래에 추가한다
    - .claude/settings.json: 없으면 위의 값으로 만든다. 있으면 worktree.baseRef만 추가한다. 다른 설정은 그대로 둔다
-4. git 저장소가 아니면 git init을 한다.
-5. 만든 파일을 커밋한다. 커밋 메시지: "chore: meta 하네스 초기화"
-6. 만든 것과 건너뛴 것을 목록으로 알린다.
-7. 다음 할 일
+5. git 저장소가 아니면 git init을 한다.
+6. 만든 파일을 커밋한다. 커밋 메시지: "chore: meta 하네스 초기화"
+7. 만든 것, 옮긴 것, 건너뛴 것을 목록으로 알린다.
+8. 다음 할 일
    .meta/roadmap.md가 비어 있으면 "지금 /meta-interview로 로드맵을 만들까요?"라고 묻는다.
    좋다고 하면 바로 /meta-interview를 시작한다.
-   design-tokens.yaml과 design-system.md는 /meta-mockup에서 채운다고 알린다.
+   .meta/design/의 세 파일은 /meta-mockup에서 채운다고 알린다.

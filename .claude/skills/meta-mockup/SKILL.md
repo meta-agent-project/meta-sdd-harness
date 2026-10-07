@@ -1,6 +1,6 @@
 ---
 name: meta-mockup
-description: spec.md의 화면을 HTML 시안 3개로 보여주고 하나를 고르게 한다. 시안은 meta-design-consistency로 기존 화면과 맞춘 뒤 보여주고, 고른 시안으로 design-tokens.yaml과 design-system.md를 채운다. "화면 시안", "목업", "디자인 골라줘", "meta-mockup" 요청에 사용.
+description: spec.md의 화면을 HTML 시안 3개로 보여주고 하나를 고르게 한다. 시안은 meta-design-consistency로 기존 화면과 맞춘 뒤 보여주고, 고른 시안으로 tokens.yaml, components.yaml, design-system.md를 채운다. "화면 시안", "목업", "디자인 골라줘", "meta-mockup" 요청에 사용.
 ---
 
 # meta-mockup
@@ -11,7 +11,7 @@ description: spec.md의 화면을 HTML 시안 3개로 보여주고 하나를 고
 ## 순서
 
 1. 읽기
-   spec.md, tech.md, design-tokens.yaml, design-system.md를 읽는다.
+   spec.md, tech.md, tokens.yaml, components.yaml, design-system.md를 읽는다.
    design-system.md의 "쓰인 곳"에 나온 기존 mockup.html도 읽는다.
 
 2. 화면 목록 뽑기
@@ -29,11 +29,11 @@ description: spec.md의 화면을 HTML 시안 3개로 보여주고 하나를 고
    파일 하나에 그 기능의 모든 화면을 담는다.
    외부 파일 없이 브라우저로 바로 열리게 만든다.
 
-   design-tokens.yaml이 비어 있을 때 (첫 기능)
+   tokens.yaml이 비어 있을 때 (첫 기능)
    - 세 시안의 색, 글꼴, 배치가 확실히 달라야 한다.
 
-   design-tokens.yaml이 있을 때 (두 번째 기능부터)
-   - 값과 컴포넌트는 design-tokens.yaml을 그대로 쓴다.
+   tokens.yaml이 있을 때 (두 번째 기능부터)
+   - 값은 tokens.yaml, 컴포넌트는 components.yaml을 그대로 쓴다.
    - 페이지 골격과 패턴은 design-system.md와 기존 mockup.html을 그대로 따른다.
    - 세 시안은 본문 안의 배치만 다르게 한다. 예: 표, 카드 목록, 두 칸 나누기
 
