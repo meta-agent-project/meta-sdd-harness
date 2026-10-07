@@ -15,7 +15,7 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
   roadmap.md
   contract.md
   note.md
-  design/           tokens.yaml, components.yaml, design-system.md
+  design/           tokens.yaml, components.yaml, ui.css, design-system.md
   specs/번호/       spec.md, tech.md, mockups/, ai/
   wiki/             architecture.md, erd.md, erd.svg, glossary.md, screen.md, spec-index.md
   loop/             auto-decisions.md, question.md, settings.md, logs/
@@ -48,7 +48,7 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 방법은 AI가 정한다. 선언을 만족하는지는 테스트가 확인한다. 테스트를 통과하면 성공이다.
 
 1. "하지 마"는 "이렇게 한다"로 바꾼다
-   - 예: "버튼을 회색으로 만들지 마" → components.yaml "button-primary: background: color.primary"
+   - 예: "버튼을 회색으로 만들지 마" → components.yaml "button: variants: primary: background: color.primary"
    - 예: "유료 서비스는 쓰지 마" → contract.md "무료 서비스만 쓴다"
    - 무엇으로 바꿀지 모르면 사용자에게 "그럼 어떻게 할까요?"라고 묻는다
    - 금지 목록을 만들지 않는다

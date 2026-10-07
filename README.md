@@ -92,8 +92,9 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 - note.md: 자유 메모. AI가 발견한 문제도 여기에 모인다
 
 디자인 (.meta/design/)
-- tokens.yaml: 색, 글꼴, 간격, 모서리, 레이아웃 값. 값의 원본
-- components.yaml: 버튼, 입력창 같은 컴포넌트 값과 상태별 값. 토큰 이름을 가리킨다
+- tokens.yaml: 색, 글꼴, 간격, 높이, 모서리, 레이아웃 값. 값의 원본. 크기는 종류마다 5단계 이하
+- components.yaml: 컴포넌트 종류마다 용도별 변형(variants), 상태별 값, 화면끼리 같아야 하는 속성(same)
+- ui.css: 두 yaml을 옮긴 공통 CSS. 모든 시안이 불러온다
 - design-system.md: 페이지 골격, 화면 패턴, 컴포넌트 쓰는 규칙. 값 대신 이름을 쓴다
 
 기능마다 (.meta/specs/002-signup/)
