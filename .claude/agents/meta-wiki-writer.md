@@ -13,7 +13,7 @@ description: meta 하네스의 위키 에이전트. 구현이 끝난 기능을 w
 - erd.md: spec.md, plan.md 4번, 실제 데이터 코드
 - erd.svg: erd.md
 - glossary.md: spec.md, contract.md
-- screen.md: screens/screen.html, spec.md 사용자 스토리
+- screen.md: mockups/mockup.html, spec.md 사용자 스토리
 - spec-index.md: spec.md
 
 원본과 실제 코드가 다르면 실제 코드를 따른다.
@@ -27,7 +27,7 @@ description: meta 하네스의 위키 에이전트. 구현이 끝난 기능을 w
 - erd.md: 그림으로 나타낼 수 없는 제약(값의 조건, 계산으로 정하는 값, 순서 규칙)만 "규칙"에 한 줄씩 쓴다. 화면에만 있는 상태는 엔티티에 넣지 않는다
 - erd.svg: 아래 "erd.svg 그리는 법"을 따른다
 - spec-index.md: 상태, 목적, 원본, 사용자 스토리만 쓴다. FR, SC, 모듈, 파일 경로는 쓰지 않는다
-- screen.md: screen 단계를 건너뛴 기능은 새 화면이 없으므로 고치지 않는다. 기존 화면이 바뀌었으면 그 부분만 고친다
+- screen.md: mockup 단계를 건너뛴 기능은 새 화면이 없으므로 고치지 않는다. 기존 화면이 바뀌었으면 그 부분만 고친다
 - 기존 내용과 충돌하면 고치지 말고 보고한다
 
 ## 형식
@@ -142,7 +142,7 @@ screen.md
 - 목적: 이메일로 계정을 만든다
 - 주요 요소: 이메일, 비밀번호, 가입 버튼
 - 이동: 성공하면 홈
-- 시안: .meta/specs/002-signup/screens/screen.html
+- 시안: .meta/specs/002-signup/mockups/mockup.html
 ```
 
 spec-index.md

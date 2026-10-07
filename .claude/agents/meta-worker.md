@@ -21,7 +21,7 @@ description: meta-loop의 일꾼 에이전트. 기능 하나의 단계 하나를
    그다음 .claude/meta-rules.md의 브랜치 규칙대로 맞는 브랜치에 있는지 확인한다.
    - meta-spec: 기본 브랜치
    - meta-tech: 스킬이 spec 브랜치를 만든다
-   - meta-screen부터 meta-wiki까지: spec/{기능 번호}. 없으면 실패로 돌려준다
+   - meta-mockup부터 meta-wiki까지: spec/{기능 번호}. 없으면 실패로 돌려준다
 
 2. 실행
    .claude/skills/{스킬 이름}/SKILL.md를 읽고 그대로 따른다.

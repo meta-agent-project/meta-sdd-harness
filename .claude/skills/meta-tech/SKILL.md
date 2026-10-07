@@ -40,7 +40,7 @@ spec.md를 보고 어떻게 만들지 정한다. 직접 만들기 전에 이미 
 
 7. 마무리
    spec-index.md 상태를 "tech 완료"로 바꾼다.
-   다음 단계는 /meta-screen이라고 알린다.
+   다음 단계는 /meta-mockup이라고 알린다.
 
 ## tech.md 형식
 

@@ -14,9 +14,10 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 .meta/
   roadmap.md
   contract.md
+  design-tokens.yaml
   design-system.md
   note.md
-  specs/번호/       spec.md, tech.md, screens/, ai/
+  specs/번호/       spec.md, tech.md, mockups/, ai/
   wiki/             architecture.md, erd.md, erd.svg, glossary.md, screen.md, spec-index.md
   loop/             auto-decisions.md, question.md, settings.md, logs/
 ```
@@ -26,7 +27,7 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 ## 사람이 보는 문서
 
 대상
-- .meta/ 의 roadmap.md, contract.md, design-system.md, note.md
+- .meta/ 의 roadmap.md, contract.md, design-tokens.yaml, design-system.md, note.md
 - .meta/specs/번호/spec.md, tech.md
 - .meta/wiki/ 안의 파일
 - meta 스킬과 에이전트 파일
@@ -39,6 +40,7 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 - ** , __ , ~~ , > , 이모지, 장식 기호를 쓰지 않는다.
 - 링크는 [글자](주소) 형식을 쓰지 않는다. URL만 한 줄에 쓴다.
 - 해당 없는 항목은 지운다. "없음"이라고 쓰지 않는다.
+- design-tokens.yaml은 YAML로 쓴다. 테스트가 직접 읽는 파일이라 위 기호 규칙의 예외다.
 
 ## 결과를 선언하고, 방법은 정하지 않는다
 
@@ -46,7 +48,7 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 방법은 AI가 정한다. 선언을 만족하는지는 테스트가 확인한다. 테스트를 통과하면 성공이다.
 
 1. "하지 마"는 "이렇게 한다"로 바꾼다
-   - 예: "버튼을 회색으로 만들지 마" → design-system.md "주 버튼: 기본색 배경"
+   - 예: "버튼을 회색으로 만들지 마" → design-tokens.yaml "button-primary: background: color.primary"
    - 예: "유료 서비스는 쓰지 마" → contract.md "무료 서비스만 쓴다"
    - 무엇으로 바꿀지 모르면 사용자에게 "그럼 어떻게 할까요?"라고 묻는다
    - 금지 목록을 만들지 않는다

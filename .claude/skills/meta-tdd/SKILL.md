@@ -34,7 +34,7 @@ description: tasks.md의 0~2단계를 실행한다. 뼈대 코드를 만들어 �
    - 레인 이름과 그 레인의 작업
    - 그 레인 모듈과, mock으로 쓸 모듈의 인터페이스
    - research.md의 테스트 도구 사용법
-   - 화면 레인이면 design-system.md와 screens/screen.html
+   - 화면 레인이면 design-tokens.yaml, design-system.md, mockups/mockup.html
    레인 하나가 끝날 때마다
    - 직전 커밋 이후 바뀐 파일이 모두 그 레인이 맡은 tests/ 파일인지 확인한다
    - 범위 밖 파일(특히 src/)이 바뀌었으면 되돌리고 그 레인을 다시 맡긴다

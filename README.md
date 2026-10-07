@@ -37,10 +37,17 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 
 단계 순서
 ```
-/meta-init → /meta-interview → /meta-spec → /meta-tech → /meta-screen
+/meta-init → /meta-interview → /meta-spec → /meta-tech → /meta-mockup
 → /meta-plan → /meta-task → /meta-tdd → /meta-implement → /meta-converge → /meta-wiki
 ```
 각 스킬을 직접 실행해도 된다.
+/meta-mockup은 시안을 보여주기 전에 /meta-design-consistency로 기존 화면과 맞춘다.
+
+화면 전체의 일관성을 한 번에 맞출 때
+```
+/meta-design-consistency
+```
+모든 시안을 토큰, 디자인 시스템과 비교해 고친다. 구현 코드에서 다른 곳은 note.md에 적는다.
 
 끝까지 자동으로
 ```
@@ -62,7 +69,8 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 | meta-interview | 아이디어를 질문으로 구체화해 roadmap, contract 작성 |
 | meta-spec | 기능 하나의 spec.md 작성 (무엇을) |
 | meta-tech | 기술 선택, tech.md 작성 (어떻게) |
-| meta-screen | 화면 시안 3개 중 선택, design-system 작성 |
+| meta-mockup | 화면 시안 3개 중 선택, 기존 화면과 일관성 맞추기 |
+| meta-design-consistency | 시안을 토큰, 디자인 시스템, 기존 화면과 비교해 맞추기 |
 | meta-plan | 상세 구현 계획 ai/plan.md |
 | meta-task | 작업 순서와 병렬 묶음 ai/tasks.md |
 | meta-tdd | 테스트를 먼저 쓰고 잠금 |
@@ -81,13 +89,14 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 프로젝트 전체 (.meta/)
 - roadmap.md: 무엇을 어떤 순서로 만드나
 - contract.md: 프로젝트 원칙, 제약, 공통 기술, 품질 기준
-- design-system.md: 색, 글꼴, 간격, 버튼과 입력창 모양
+- design-tokens.yaml: 색, 글꼴, 간격, 버튼과 입력창 값. 값의 원본
+- design-system.md: 페이지 골격, 화면 패턴, 컴포넌트 쓰는 규칙. 값 대신 토큰 이름을 쓴다
 - note.md: 자유 메모. AI가 발견한 문제도 여기에 모인다
 
 기능마다 (.meta/specs/002-signup/)
 - spec.md: 무엇을 만드나. 사용자 스토리, 요구사항, 성공 기준
 - tech.md: 무엇으로 만드나. 고른 기술과 이유
-- screens/screen.html: 고른 화면 시안
+- mockups/mockup.html: 고른 화면 시안
 
 구현 결과 (.meta/wiki/)
 - 실제로 만들어진 내용을 meta-wiki가 정리한다

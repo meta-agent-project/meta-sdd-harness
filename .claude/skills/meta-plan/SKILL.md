@@ -1,6 +1,6 @@
 ---
 name: meta-plan
-description: spec, tech, research, screen을 토대로 ai/plan.md에 상세 구현 계획을 쓴다. 모듈 경계와 인터페이스를 정해 병렬 구현이 가능하게 한다. "계획 세워줘", "상세 계획", "meta-plan" 요청에 사용.
+description: spec, tech, research, mockup을 토대로 ai/plan.md에 상세 구현 계획을 쓴다. 모듈 경계와 인터페이스를 정해 병렬 구현이 가능하게 한다. "계획 세워줘", "상세 계획", "meta-plan" 요청에 사용.
 ---
 
 # meta-plan
@@ -11,8 +11,8 @@ AI가 구현할 수 있는 상세 계획을 ai/plan.md에 쓴다.
 ## 순서
 
 1. 읽기
-   spec.md, tech.md, ai/research.md, design-system.md, contract.md를 읽는다.
-   screens/screen.html이 있으면 읽는다. screen 단계를 건너뛴 기능에는 없다.
+   spec.md, tech.md, ai/research.md, design-tokens.yaml, design-system.md, contract.md를 읽는다.
+   mockups/mockup.html이 있으면 읽는다. mockup 단계를 건너뛴 기능에는 없다.
 
 2. 기존 구조 확인
    .meta/wiki/architecture.md의 전체 구조, 구조 규칙, 공통 처리를 읽는다.

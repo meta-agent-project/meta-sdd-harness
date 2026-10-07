@@ -23,9 +23,9 @@ meta-flow 자신은 파일을 고치지 않는다. 고치는 일은 실행한 �
 
 3. 상태로 다음 스킬 정하기
    spec 완료                          /meta-tech
-   tech 완료                          /meta-screen
-   screen 완료                        /meta-plan
-   screen 건너뜀                      /meta-plan
+   tech 완료                          /meta-mockup
+   mockup 완료                        /meta-plan
+   mockup 건너뜀                      /meta-plan
    plan 완료                          /meta-task
    task 완료                          /meta-tdd
    tdd 완료                           /meta-implement
@@ -44,7 +44,7 @@ meta-flow 자신은 파일을 고치지 않는다. 고치는 일은 실행한 �
    상태에 비해 있어야 할 파일이 없으면 알린다.
    - spec 완료 이후: spec.md
    - tech 완료 이후: tech.md, ai/research.md
-   - screen 완료 이후: screens/screen.html (screen 건너뜀이면 없어도 된다)
+   - mockup 완료 이후: mockups/mockup.html (mockup 건너뜀이면 없어도 된다)
    - plan 완료 이후: ai/plan.md
    - task 완료 이후: ai/tasks.md
    - tdd 완료 이후: 잠금 태그 lock/{기능 번호}

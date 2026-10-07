@@ -18,6 +18,7 @@ description: meta 하네스의 공통 파일과 폴더를 빈 상태로 만들�
 .meta/
 - roadmap.md
 - contract.md
+- design-tokens.yaml
 - design-system.md
 - note.md
 
@@ -81,4 +82,4 @@ description: meta 하네스의 공통 파일과 폴더를 빈 상태로 만들�
 7. 다음 할 일
    .meta/roadmap.md가 비어 있으면 "지금 /meta-interview로 로드맵을 만들까요?"라고 묻는다.
    좋다고 하면 바로 /meta-interview를 시작한다.
-   design-system은 /meta-screen에서 채운다고 알린다.
+   design-tokens.yaml과 design-system.md는 /meta-mockup에서 채운다고 알린다.
