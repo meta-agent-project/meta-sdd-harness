@@ -44,13 +44,15 @@ layout:
   header-height: 64
   content-max-width: 1200
   page-padding: 24
+  form-width: 480
 ```
 
 components.yaml
 - 맨 위 키가 컴포넌트 종류다. 버튼, 입력창, 체크박스, 라디오, 표, 카드, 네비게이션 모두 같은 틀로 쓴다
 - 값은 tokens.yaml의 이름(color.primary)이나 단계 안의 숫자로 쓴다
 - variants: 용도별 변형이다. 이름은 용도로 짓고, 기본과 다른 값만 적는다
-- same: 모든 화면에서 같아야 하는 속성이다
+- sizes: 크기별 변형이다. 용도와 따로 쓰고, 기본과 다른 값만 적는다
+- same: 모든 화면에서 같아야 하는 속성이다. 기준값 없이 화면끼리 비교한다
 - 상태(hover, disabled, error)는 컴포넌트 아래 키로 쓰고, 기본 상태와 다른 값만 적는다
 - 테스트가 이 파일을 직접 읽는다
 
@@ -62,6 +64,7 @@ button:
     primary: { background: color.primary, text: color.background }
     secondary: { background: color.background, text: color.text, border: color.text-sub }
     danger: { background: color.error, text: color.background }
+  sizes:
     small: { height: 32 }
   disabled: { background: color.text-sub }
 input:
@@ -80,7 +83,7 @@ nav:
 
 ui.css
 - 토큰은 CSS 변수로 쓴다. 예: --color-primary, --space-3
-- 컴포넌트는 .{종류}-{변형} 클래스로 쓴다. 예: .button-primary, .input-default
+- 컴포넌트는 .{종류}-{변형} 클래스로 쓴다. 크기는 .{종류}-{크기} 클래스를 더한다. 예: .button-primary, .button-small
 - 두 yaml과 값이 같다
 
 design-system.md
@@ -97,7 +100,7 @@ design-system.md
 
 패턴
 - 목록 화면: 제목 줄, 검색과 필터 한 줄, 표. 쓰인 곳: 004
-- 입력 폼: 한 칸으로 쌓기, 너비 480, 저장 버튼은 폼 아래 오른쪽. 쓰인 곳: 002
+- 입력 폼: 한 칸으로 쌓기, 너비 layout.form-width, 저장 버튼은 폼 아래 오른쪽. 쓰인 곳: 002
 - 확인 대화상자: 가운데, 버튼은 오른쪽에 보조 버튼, 주 버튼 순서
 
 컴포넌트 사용
@@ -112,22 +115,22 @@ design-system.md
 2. 값: 색, 글자 크기, 간격, 높이, 모서리가 tokens.yaml에 있는 값이다. 새로 만든 컴포넌트도 같다
 3. 글자 역할: 글자 크기는 title, section, body, small 중 역할에 맞는 것이다
 4. 변형: 컴포넌트는 components.yaml의 variants 중 용도에 맞는 것이다. 새 변형은 용도 이름을 먼저 정하고 만든다
-5. 여백: 부품 안쪽 여백은 부품의 padding, 부품 사이 간격은 부모의 gap이다. 부품의 바깥 margin은 0이다
+5. 여백: 부품 안쪽 여백은 부품의 padding이 정한다. 부품 사이 간격은 부모의 gap을 기본으로 한다
 6. 같은 값: same에 적은 속성은 모든 화면에서 같다. 한 줄에 놓인 컨트롤은 높이가 같다
 7. 골격: 헤더, 페이지 제목, 주 버튼 위치, 본문 너비가 design-system.md의 페이지 골격과 같다
-8. 패턴: 이미 있는 패턴과 같은 종류의 화면이면, 그 패턴이 쓰인 mockup.html과 배치가 같다
+8. 패턴: 이미 있는 패턴과 같은 종류의 화면이면, 그 패턴이 쓰인 mockup.html을 참고하고 콘텐츠와 작업 흐름에 맞게 조정한다
 
 ## 확인하는 법
 
 시안을 브라우저로 열어 실제 적용된 값을 재고, 위 항목과 비교한다.
 - 1, 2, 5, 6은 잰 값으로 판정한다
-- 종류마다 실제 모양의 가짓수가 variants 개수 이하인지 센다
+- 종류마다 실제 모양의 가짓수가 variants와 sizes 조합 수 이하인지 센다
 - 3, 4는 추측이라 "확인 필요"로 보고한다. 예: "삭제" 글자인데 danger가 아님, 한 화면에 primary가 둘
 
 ## 어긋난 곳을 찾았을 때
 
-- 토큰과 거의 같은 값(예: 15, 17)이면 가장 가까운 토큰으로 바꾸고, 바꾼 것을 한 줄씩 알린다
-- 토큰에 없는 값이나 새 컴포넌트가 정말 필요해 보이면 사용자에게 묻는다
+- 토큰과 2px 이하로 다르면(예: 15, 17) 가장 가까운 토큰으로 바꾸고, 바꾼 것을 한 줄씩 알린다
+- 그보다 크게 다른 값, 토큰에 없는 값이나 새 컴포넌트가 정말 필요해 보이면 사용자에게 묻는다
   - "새 토큰으로 추가할까요, 기존 {토큰 이름}으로 바꿀까요?"
   - 추천과 이유를 함께 보여준다
 
@@ -150,7 +153,9 @@ meta-mockup 7번에서 실행한다.
 - 페이지 골격, 패턴, 컴포넌트 사용을 뽑아 design-system.md를 쓴다
 
 토큰이 있었을 때
-- 새로 생긴 토큰, 컴포넌트, 변형, 패턴만 추가한다. 기존 값은 바꾸지 않는다
+- 선택한 첫 시안을 공통 디자인의 기준으로 삼는다. 이후 화면은 이 기준을 우선 따른다
+- 새로 생긴 토큰, 컴포넌트, 변형, 패턴을 추가한다
+- 기준을 바꾸는 게 나으면 제안만 하고, 전체 검사에서 기준과 관련 화면을 함께 고친다
 - 추가한 것은 ui.css에도 반영한다
 - 쓰인 곳에 이번 기능 번호를 더한다
 
