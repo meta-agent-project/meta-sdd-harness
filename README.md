@@ -91,7 +91,7 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 
 구현 결과 (wiki/)
 - 실제로 만들어진 내용을 meta-wiki가 정리한다
-- architecture.md, erd.md, glossary.md, screen.md, spec-index.md
+- architecture.md, erd.md(+ erd.svg 그림), glossary.md, screen.md, spec-index.md
 - spec-index.md에서 기능마다 진행 상태를 본다
 
 AI가 보는 문서
