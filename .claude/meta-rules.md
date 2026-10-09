@@ -14,7 +14,8 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 .meta/
   roadmap.md
   contract.md
-  note.md
+  backlog.md
+  issues.md
   design/           tokens.yaml, components.yaml, ui.css, design-system.md
   specs/번호/       spec.md, tech.md, mockups/, ai/
   wiki/             architecture.md, erd.md, erd.svg, glossary.md, screen.md, spec-index.md
@@ -26,7 +27,7 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 ## 사람이 보는 문서
 
 대상
-- .meta/ 의 roadmap.md, contract.md, note.md
+- .meta/ 의 roadmap.md, contract.md, backlog.md, issues.md
 - .meta/design/ 의 tokens.yaml, components.yaml, design-system.md
 - .meta/specs/번호/spec.md, tech.md
 - .meta/wiki/ 안의 파일
@@ -71,6 +72,8 @@ meta 스킬과 에이전트는 문서를 쓰기 전에 이 파일을 읽는다.
 - 문서가 이미 맞게 말하는데 코드가 따르지 않은 것도 구현 실수다.
 - 문서에 코드를 넣지 않는다. 문서는 규칙과 결정만 담는다.
 
+요구사항을 바꾸거나 버그를 고치는 요청은 /meta-requirement-change가 받는다. 고칠 문서와 다시 할 단계를 그 스킬이 정한다.
+
 규칙이 바뀌었을 때 고칠 문서
 - 기능의 동작이 바뀜: spec.md. 사용자가 허락할 때만 고친다
 - 기술이나 버전이 바뀜: tech.md, ai/research.md
@@ -100,6 +103,7 @@ spec 하나는 spec 브랜치에서 만들고 끝나면 기본 브랜치에 머�
 - 동시에 진행하는 spec 브랜치는 하나뿐이다
 - 머지하지 않은 spec 브랜치가 있으면 그 기능이 진행 중인 기능이다
 - meta-live는 기본 브랜치에서 실행한다
+- meta-requirement-change는 진행 중인 기능의 변경이면 그 spec 브랜치에서, 아니면 기본 브랜치에서 실행한다
 
 ## 루프 모드
 
@@ -130,8 +134,9 @@ meta-worker로 실행될 때는 사용자에게 직접 묻지 않는다.
 ## 관련 없는 문제를 발견했을 때
 
 지금 작업과 상관없는 문제를 발견하면 고치지 않는다.
-- 에이전트는 "돌려줄 것"에 담아 돌려주기만 한다. note.md를 직접 고치지 않는다
-- 스킬이 받아서 note.md의 "AI가 발견한 문제" 구역에 적는다
+- 에이전트는 "돌려줄 것"에 담아 돌려주기만 한다. issues.md를 직접 고치지 않는다
+- 스킬이 받아서 issues.md의 "AI가 발견한 문제" 구역에 적는다
+- 나중에 고칠 문제도 issues.md에 적는다. 아직 spec이 없는 기능에 미리 정한 요구사항은 backlog.md에 적는다
 - 적는 내용: 어느 기능의 문제인지, 증상, 파일 위치, 무엇을 하다가 발견했는지
 
 ## 실행 명령

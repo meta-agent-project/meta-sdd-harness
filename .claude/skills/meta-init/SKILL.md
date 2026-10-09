@@ -18,7 +18,8 @@ description: meta 하네스의 공통 파일과 폴더를 빈 상태로 만들�
 .meta/
 - roadmap.md
 - contract.md
-- note.md
+- backlog.md
+- issues.md
 
 .meta/design/
 - tokens.yaml
@@ -74,12 +75,16 @@ description: meta 하네스의 공통 파일과 폴더를 빈 상태로 만들�
 
 ## 순서
 
-1. 옛 디자인 문서 옮기기
+1. 옛 문서 옮기기
    .meta/design-tokens.yaml이 있으면 옮긴다.
    - component: 아래 내용은 한 단계 내어 .meta/design/components.yaml에 쓴다
    - 나머지는 .meta/design/tokens.yaml에 쓴다
    - .meta/design-tokens.yaml은 지운다
    - .meta/design-system.md는 git mv로 .meta/design/design-system.md로 옮긴다
+   .meta/note.md가 있으면 나눠 옮긴다.
+   - "AI가 발견한 문제" 구역은 .meta/issues.md에 쓴다
+   - 나머지 줄은 사용자에게 보여주고 backlog.md, issues.md 중 어디로 옮길지 묻는다. 둘 다 아니면 지운다
+   - .meta/note.md는 지운다
 2. 이미 있는 파일은 건드리지 않는다. 없는 것만 만든다.
 3. 문서는 모두 빈 파일로 만든다. .meta/design/, .meta/wiki/, .meta/loop/ 안의 파일도 마찬가지다.
 4. 이미 있는 파일에는 빠진 것만 더한다.

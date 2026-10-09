@@ -1,6 +1,6 @@
 ---
 name: meta-interview
-description: 모호한 아이디어를 질문으로 구체화해 roadmap.md와 contract.md를 만들거나 고친다. "로드맵 만들어줘", "뭘 만들지 정리해줘", "프로젝트 시작", "기능 추가하고 싶어", "meta-interview" 요청에 사용. 기능 하나의 상세 정의는 meta-spec이 한다.
+description: 모호한 아이디어를 질문으로 구체화해 roadmap.md와 contract.md를 처음 만들거나, 목표와 사용자가 바뀔 때 다시 짠다. "로드맵 만들어줘", "뭘 만들지 정리해줘", "프로젝트 시작", "방향을 바꾸자", "meta-interview" 요청에 사용. 기능 하나의 추가, 삭제, 순서 변경은 meta-requirement-change가, 기능 하나의 상세 정의는 meta-spec이 한다.
 ---
 
 # meta-interview
@@ -11,8 +11,9 @@ description: 모호한 아이디어를 질문으로 구체화해 roadmap.md와 c
 ## 순서
 
 1. 읽기
-   roadmap.md, contract.md, note.md를 읽는다.
-   roadmap.md가 이미 있으면 새로 만들지 않고 고친다. 기능 추가, 순서 변경.
+   roadmap.md, contract.md, backlog.md, issues.md를 읽는다.
+   roadmap.md가 이미 있으면 새로 만들지 않고 고친다. 목표와 사용자가 바뀌는 큰 방향 전환만 여기서 한다.
+   기능 하나의 추가, 삭제, 순서 변경은 /meta-requirement-change로 보낸다.
 
 2. 의도 파악
    무엇을, 누구를 위해, 왜 만드는지 묻는다.

@@ -14,6 +14,7 @@ description: 새 기능의 spec.md를 만들고 질문 5개 이내로 다듬는�
 
 2. 읽기
    contract.md, roadmap.md, 사용자 설명을 읽는다.
+   backlog.md에 이 기능 항목이 있으면 읽고 초안에 넣는다.
 
 3. 초안 쓰기
    아래 형식대로 쓴다. 상식으로 채울 수 있는 것은 채우고,
@@ -46,6 +47,7 @@ description: 새 기능의 spec.md를 만들고 질문 5개 이내로 다듬는�
    spec-index.md에 이 기능의 상태, 목적, 원본 경로, 사용자 스토리를 추가한다.
    FR과 SC는 넣지 않는다. 형식은 .claude/agents/meta-wiki-writer.md의 spec-index.md 형식을 따른다.
    상태는 "spec 완료"로 쓴다.
+   backlog.md에서 이 기능 항목을 지운다.
    다음 단계는 /meta-tech라고 알린다.
 
 ## spec.md 형식

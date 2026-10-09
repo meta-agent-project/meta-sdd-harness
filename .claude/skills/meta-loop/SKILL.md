@@ -54,7 +54,7 @@ description: roadmap의 모든 기능을 멈추지 않고 끝까지 진행한다
 
 4. 끝
    roadmap의 모든 기능이 완료면 멈추고 푸시 알림을 보낸다.
-   auto-decisions.md와 note.md의 "AI가 발견한 문제"에 새 항목이 몇 개인지 함께 알린다.
+   auto-decisions.md와 issues.md에 새 항목이 몇 개인지 함께 알린다.
 
 ## 질문 처리
 

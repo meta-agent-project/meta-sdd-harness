@@ -14,6 +14,7 @@ meta-flow 자신은 파일을 고치지 않는다. 고치는 일은 실행한 �
 1. 시작 전 확인
    공통 파일이 없으면 묻지 않고 바로 /meta-init을 실행한다.
    roadmap.md가 비어 있으면 /meta-interview를 시작한다.
+   사용자가 요구사항을 바꾸자고 하거나 버그를 말하면 /meta-requirement-change를 실행한다.
 
 2. 진행 중인 기능 찾기
    머지하지 않은 spec/ 브랜치가 있으면 그 기능이 진행 중인 기능이다.
@@ -37,8 +38,9 @@ meta-flow 자신은 파일을 고치지 않는다. 고치는 일은 실행한 �
    막힘                               다음 스킬을 안내하지 않는다. 막힌 이유를 보여주고 사람이 정하게 한다
 
 4. 진행 중인 기능이 없을 때
+   issues.md에 "다시 열기 대기" 항목이 있으면 먼저 그 기능의 /meta-requirement-change를 추천한다.
    roadmap.md의 기능 순서에서 spec-index에 아직 없는 첫 기능을 찾는다: /meta-spec
-   roadmap의 기능이 모두 완료됐으면: 배포 전이면 /meta-live, 기능을 더하려면 /meta-interview
+   roadmap의 기능이 모두 완료됐으면: 배포 전이면 /meta-live, 기능을 더하려면 /meta-requirement-change
 
 5. 상태와 파일이 맞는지 확인
    상태에 비해 있어야 할 파일이 없으면 알린다.
@@ -65,6 +67,7 @@ meta-flow 자신은 파일을 고치지 않는다. 고치는 일은 실행한 �
 - 001-lecture-store 강의 저장: 완료
 - 002-slide-editor 슬라이드 편집: converge 1회차 implement 완료
 - 남은 기능: export 내보내기
+- issues.md: AI가 발견한 문제 2개, 다시 열기 대기 0개
 
 다음 차례
 002-slide-editor의 /meta-converge

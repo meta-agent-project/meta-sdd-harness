@@ -47,7 +47,14 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 ```
 /meta-design-consistency
 ```
-모든 시안을 토큰, 디자인 시스템과 비교해 고친다. 구현 코드에서 다른 곳은 note.md에 적는다.
+모든 시안을 토큰, 디자인 시스템과 비교해 고친다. 구현 코드에서 다른 곳은 issues.md에 적는다.
+
+요구사항을 바꾸거나 버그를 고칠 때
+```
+/meta-requirement-change
+```
+바뀌는 문서(roadmap, contract, spec, backlog)를 찾아 고치고, 다시 할 단계로 기능 상태를 되돌린다.
+완료된 기능도 다시 열어 converge부터 이어 간다.
 
 끝까지 자동으로
 ```
@@ -67,6 +74,7 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 |---|---|
 | meta-init | 빈 문서, 폴더, git 준비 |
 | meta-interview | 아이디어를 질문으로 구체화해 roadmap, contract 작성 |
+| meta-requirement-change | 요구사항 변경과 버그의 입구. 고칠 문서와 다시 할 단계 판정 |
 | meta-spec | 기능 하나의 spec.md 작성 (무엇을) |
 | meta-tech | 기술 선택, tech.md 작성 (어떻게) |
 | meta-mockup | 화면 시안 3개 중 선택, 기존 화면과 일관성 맞추기 |
@@ -89,7 +97,8 @@ Spec-Driven Development(SDD) 기반의 Claude Code 개발 하네스.
 프로젝트 전체 (.meta/)
 - roadmap.md: 무엇을 어떤 순서로 만드나
 - contract.md: 프로젝트 원칙, 제약, 공통 기술, 품질 기준
-- note.md: 자유 메모. AI가 발견한 문제도 여기에 모인다
+- backlog.md: 아직 spec이 없는 기능에 미리 정한 요구사항. meta-spec이 꺼내 쓰고 지운다
+- issues.md: AI가 발견한 문제, 나중에 고칠 문제, 다시 열기를 기다리는 기능
 
 디자인 (.meta/design/)
 - tokens.yaml: 색, 글꼴, 간격, 높이, 모서리, 레이아웃 값. 값의 원본. 크기는 종류마다 5단계 이하
@@ -114,6 +123,7 @@ AI가 보는 문서
 - .meta/specs/002-signup/ai/tasks.md: 작업 순서와 병렬 묶음
 
 문서를 고칠 때
+- /meta-requirement-change로 시작한다
 - 문서를 먼저 고치고, 코드가 문서를 따른다
 - 동작이 바뀌면 spec.md (사용자 허락), 기술이 바뀌면 tech.md, 설계가 바뀌면 ai/plan.md
 - 완료된 기능의 문서를 고쳤으면 /meta-wiki를 다시 실행한다

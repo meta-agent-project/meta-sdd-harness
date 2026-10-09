@@ -183,7 +183,7 @@ meta-mockup 7번에서 실행한다.
 
 5. 구현 코드 확인
    구현된 화면 코드에서 tokens.yaml, components.yaml과 다른 값을 찾는다.
-   코드는 고치지 않는다. note.md의 "AI가 발견한 문제"에 적는다.
+   코드는 고치지 않는다. issues.md의 "AI가 발견한 문제"에 적는다.
 
 6. 마무리
    커밋한다. 커밋 메시지: "docs: design consistency"
@@ -201,7 +201,7 @@ meta-mockup 7번에서 실행한다.
 - 확인 필요: 004 "삭제" 버튼이 button-secondary
 - 여러 화면에서 다름: 카드 모서리 10(002), 12(004) → radius.card(12)로 합칠까요?
 
-구현 코드에서 다른 곳 (note.md에 적음)
+구현 코드에서 다른 곳 (issues.md에 적음)
 - src/pages/signup.css:12 주 버튼 높이 44
 ```
 
